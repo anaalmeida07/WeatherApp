@@ -1,16 +1,17 @@
-*{
-margin: 0;
-padding: 0;
-font-family: 'Poppins', sans-serif;
-box-sizing: border-box;
-
-
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background: #03123c;
 }
 
-.card{
+/* Cartão Principal */
+.card {
     width: 90%; 
     max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
@@ -20,7 +21,17 @@ body{
     padding: 40px 35px;
     text-align: center;
 }
-.search input{ 
+
+/* Caixa de Pesquisa */
+.search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search input { 
     border: 0;
     outline: 0;
     background: #ebfffc;
@@ -29,12 +40,12 @@ body{
     height: 60px;
     border-radius: 30px;
     flex: 1;
-    margin-right: 16px;
     font-size: 18px;
     text-align: center;
-    
+    max-width: 70%; /* Limita a largura máxima */
 }   
-.search button{
+
+.search button {
     border: 0;
     outline: 0;
     background: #ebfffc;
@@ -43,75 +54,151 @@ body{
     height: 60px;
     cursor: pointer;
 }
-.search button img{
+
+.search button img {
     width: 16px;
 }
-.weather-icon{
+
+/* Ícone do Clima */
+.weather-icon {
     width: 170px;
     margin-top: 30px;
-
 }
-.weather h1{
+
+.weather h1 {
     font-size: 80px;
     font-weight: 500;
 }
 
-.weather h2{
+.weather h2 {
     font-size: 24px;
     font-weight: 500;
     margin-top: -10px;
 }
 
-.details{
+/* Detalhes do Clima */
+.details {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     margin-top: 50px;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    gap: 20px;
 }
 
-.col{
+.col {
     display: flex;
     align-items: center;
     text-align: left;
 }
 
-.col img{
+.col img {
     width: 35px;
     margin-right: 10px;
-
 }
 
-.humidity, .wind{
+.humidity, .wind {
     font-size: 20px;
     margin-top: -6px;
 }
 
-.weather{
+/* Exibição do Clima */
+.weather {
     display: none;
 }
 
-.title{
-    
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        font-size: 48px;
-        text-align: center;
-        margin-top: 30px ;
-        font-weight: bold; 
-        background: linear-gradient(to top,  #5b548a, #00feba); 
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: -2px;
-      
-      }
+/* Título */
+.title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold; 
+    background: linear-gradient(to top, #5b548a, #00feba); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+}
 
-      .error{
-        text-align: left;
-        margin-left: 10px;
-        font-size: 14px;
-        margin-top: 10px;
-        color: red;
-        display: none;
-      }
+/* Mensagem de Erro */
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    color: red;
+    display: none;
+}
+
+/* Media Queries para Responsividade */
+@media only screen and (max-width: 768px) {
+    .card {
+        padding: 20px;
+    }
+
+    .weather h1 {
+        font-size: 60px;
+    }
+
+    .details {
+        flex-direction: column; /* Ajusta a direção dos detalhes para coluna */
+    }
+
+    .col {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .weather-icon {
+        width: 140px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .search input {
+        max-width: 100%; /* Permite que a caixa de pesquisa ocupe toda a largura */
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .search button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .weather h1 {
+        font-size: 48px;
+    }
+
+    .weather h2 {
+        font-size: 20px;
+    }
+
+    .weather-icon {
+        width: 120px;
+    }
+
+    .details {
+        padding: 0;
+        gap: 10px;
+    }
+
+    .col img {
+        width: 30px;
+    }
+
+    .humidity, .wind {
+        font-size: 18px;
+    }
+}
